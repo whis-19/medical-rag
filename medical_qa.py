@@ -13,12 +13,16 @@ from langchain_core.documents import Document
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 from langchain_classic.chains import create_retrieval_chain
 
+import streamlit as st
+
 # Load environment variables from .env file
 load_dotenv()
 
 # API Key setup
 if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = getpass("Enter your Gemini API Key: ")
+    google_api_key = st.secrets.get("GOOGLE_API_KEY") or getpass("Enter your Gemini API Key: ")
+    os.environ["GOOGLE_API_KEY"] = google_api_key
+
 print("API Key set.")
 
 # Constants
