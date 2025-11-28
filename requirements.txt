@@ -1,0 +1,13 @@
+langchain
+langchain-google-genai
+chromadb
+pandas
+langchain-community
+langchain-classic
+langchain-text-splitters
+pydantic
+python-dotenv
+tqdm
+langchain-chroma
+streamlit
+pypdf
